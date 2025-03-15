@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="th"><!DOCTYPE html><html><head><link rel="shortcut icon" href="/favicon/favicon.ico"><link rel="icon" href="/favicon/favicon.ico"><link rel="icon" sizes="48x48" href="/favicon/favicon-48.png"><link rel="icon" sizes="96x96" href="/favicon/favicon-96.png"><link rel="icon" sizes="192x192" href="/favicon/favicon-192.png"><link rel="apple-touch-icon" sizes="120x120" href="/favicon/favicon-120.png"><link rel="apple-touch-icon" sizes="180x180" href="/favicon/favicon-180.png"><meta charset="utf-8"><meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,minimum-scale=1,maximum-scale=1,viewport-fit=cover"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="format-detection" content="telephone=no,email=no"><meta name="msapplication-tap-highlight" content="no"><meta name="renderer" content="webkit"><meta name="force-rendering" content="webkit"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><meta name="full-screen" content="yes"><meta name="x5-fullscreen" content="true"><meta name="screen-orientation" content="portrait"><meta name="x5-orientation" content="portrait"><meta name="browsermode" content="application"><meta name="x5-page-mode" c
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BITKUB98</title>
+
+    <style>
+        
+
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+       
+        body {
+            text-align: center;
+            font-family: 'Poppins', sans-serif;
+            background: radial-gradient(circle, #1e1e2f, #3a3a56);
+            color: rgb(0, 0, 0);
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        body {
+            text-align: center;
+            font-family: 'Poppins', sans-serif;
+            background: url('file:///D:/New%20folder/d91bcaa6-3493-41dc-a5b9-8bc7215510ec.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        #auth-container {
+            background-image: url(' file:///C:/Users/Administrator/Downloads/95194762-ccd7-4541-b75a-aadc3ea284c5.jpg'); /* เปลี่ยน 'your-background-image-url.jpg' เป็น URL ของรูปที่คุณต้องการ */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .container {
+            background: rgba(0, 0, 0, 0.9);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 30px rgba(255, 255, 255, 0.3);
+            width: 90%;
+            max-width: 450px;
+            animation: fadeIn 1s ease-in-out;
+        }
+                   
+        
+        h1,
+        h2 {
+            color: #ffcc00;
+            text-shadow: 0px 0px 10px rgba(255, 204, 0, 0.8);
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 10px;
+            font-size: 18px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .slot-container {
+            font-size: 80px;
+            margin: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            display: inline-block;
+            transition: transform 0.5s ease-in-out;
+            box-shadow: 0px 5px 20px rgba(255, 255, 255, 0.3);
+        }
+
+        .button {
+            padding: 15px 25px;
+            font-size: 20px;
+            margin: 10px;
+            cursor: pointer;
+            border: none;
+            border-radius: 30px;
+            color: white;
+            background: linear-gradient(45deg, #ff9800, #ff5722);
+            transition: 0.3s;
+            box-shadow: 0px 5px 20px rgba(255, 94, 0, 0.6);
+        }
+
+        .button:hover {
+            transform: scale(1.1);
+            background: linear-gradient(45deg, #ff5722, #e64a19);
+            box-shadow: 0px 7px 30px rgba(255, 94, 0, 0.8);
+        }
+
+        .button:active {
+            background: linear-gradient(45deg, #e64a19, #ff5722);
+            box-shadow: 0px 5px 15px rgba(255, 94, 0, 0.8);
+            transform: scale(0.98);
+        }
+
+        .button-group {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: none; /* Initially hidden */
+            justify-content: center;
+            align-items: center;
+        }
+
+        .popup-content {
+            background: #fff;
+            padding: 20px;
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            width: 300px;
+            text-align: center;
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .popup input {
+            width: 80%;
+            margin: 10px 0;
+            font-size: 18px;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .popup button {
+            background: #4caf50;
+            margin-top: 20px;
+        }
+
+        .popup button:hover {
+            background: #45a049;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .game-info {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+            color: #ffcc00;
+        }
+
+        .game-info div {
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+        }
+
+        @keyframes verticalSpin {
+            0% {
+                transform: translateY(-100%);
+            }
+
+            50% {
+                transform: translateY(0);
+            }
+
+            100% {
+                transform: translateY(100%);
+            }
+        }
+
+        .fruit-vertical-spin {
+            animation: verticalSpin 1s ease-in-out;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                width: 100%;
+                max-width: 400px;
+            }
+
+            .button {
+                padding: 12px 20px;
+                font-size: 18px;
+                margin: 8px;
+            }
+
+            .game-info {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .popup-content {
+                width: 80%;
+            }
+
+            .slot-container {
+                font-size: 60px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .button {
+                padding: 10px 15px;
+                font-size: 16px;
+                margin: 8px;
+            }
+
+            .slot-container {
+                font-size: 50px;
+            }
+
+            .game-info {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- หน้าเข้าสู่ระบบ -->
+   <!-- เพิ่มปุ่มติดต่อแอดมินที่หน้า Log in -->
+<div class="container" id="auth-container">
+    <div class="login-logo">
+        <img src="   " alt="Login Logo"> 
+    </div>
+    <h2>เข้าสู่ระบบ / สมัครสมาชิก</h2>
+    
+    <input type="text" id="username" placeholder="ชื่อผู้ใช้">
+    <input type="password" id="password" placeholder="รหัสผ่าน">
+    <button class="button" onclick="login()">🔑 เข้าสู่ระบบ</button>
+    <button class="button" onclick="register()">📝 สมัครสมาชิก</button>
+    <button class="button admin-button" onclick="contactAdmin()">📩 ติดต่อแอดมิน</button>
+    <p id="auth-message"></p>
+</div>
+
+<script>
+    function contactAdmin() {
+        // เปลี่ยน URL เป็นช่องทางติดต่อแอดมินที่คุณต้องการ เช่น Line หรือ Email
+        window.open('https://line.me/ti/p/~youradminlineid', '_blank');
+    }
+</script>
+
+<style>
+    .admin-button {
+        background: linear-gradient(45deg, #0084ff, #0066cc);
+        margin-top: 10px;
+    }
+    .admin-button:hover {
+        background: linear-gradient(45deg, #0066cc, #0044aa);
+    }
+</style>
+
+
+
+
+<button id="music-button" class="music-btn" onclick="toggleMusic()">🎵</button>
+
+<audio id="background-music" loop>
+    <source src="1.mp3" type="audio/mp3">
+</audio>
+
+<style>
+    .music-btn {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        border: none;
+        border-radius: 50%;
+        font-size: 20px;
+        background: linear-gradient(45deg, #ff9800, #ff5722);
+        color: white;
+        cursor: pointer;
+        box-shadow: 0px 5px 15px rgba(255, 94, 0, 0.6);
+        transition: 0.3s;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .music-btn:hover {
+        transform: scale(1.1);
+        background: linear-gradient(45deg, #ff5722, #e64a19);
+    }
+
+    .music-btn.active {
+        background: linear-gradient(45deg, #4caf50, #388e3c);
+        box-shadow: 0px 5px 15px rgba(76, 175, 80, 0.6);
+    }
+</style>
+
+<script>
+    let music = document.getElementById("background-music");
+    let musicBtn = document.getElementById("music-button");
+    let isPlaying = false;
+
+    function toggleMusic() {
+        if (isPlaying) {
+            music.pause();
+            musicBtn.classList.remove("active");
+        } else {
+            music.play();
+            musicBtn.classList.add("active");
+        }
+        isPlaying = !isPlaying;
+    }
+</script>
+
+
+    <!-- หน้าเกม -->
+    <div class="container" id="game-container" style="display:none;">
+        <h1>🎰 RichFruit 🎰</h1>
+        <div class="game-info">
+            <div>ยอดเงิน: <span id="balance">100</span> ฿</div>
+            <div>เดิมพัน: <span id="betAmount">10</span> ฿</div>
+            <div>เงินรางวัล: <span id="winnings">0</span> ฿</div>
+        </div>
+
+        <button class="button" onclick="addMoney()">💰 เติมเงิน</button>
+        <button class="button" onclick="increaseBet()">➕ เพิ่มเดิมพัน</button>
+        <button class="button" onclick="decreaseBet()">➖ ลดเดิมพัน</button>
+
+        <div class="slot-container" id="slots">
+            <span class="fruit" id="slot1">❓</span>
+            <span class="fruit" id="slot2">❓</span>
+            <span class="fruit" id="slot3">❓</span>
+        </div>
+
+        <div class="button-group">
+            <button class="button" onclick="spin()">🎰 หมุน</button>
+
+            <button class="button" onclick="showAutoSpinOptions()">🔄 หมุนอัตโนมัติ</button>
+            <button class="button" id="stop-spin-button" style="display:none;" onclick="stopAutoSpin()">⏹️ หยุดหมุน</button>
+        </div>
+
+        <!-- ปุ่มออกจากระบบ -->
+        <button class="button" onclick="logout()">🚪 ออกจากระบบ</button>
+    </div>
+
+   <!-- ป๊อปอัพเติมเงิน -->
+<div class="popup" id="popup-add-money">
+    <div class="popup-content">
+        <h3 style="color: rgb(0, 0, 0);">กรอกจำนวนเงินที่จะเติม</h3>
+        <input type="number" id="add-money-amount" placeholder="จำนวนเงิน" style="color: rgb(255, 187, 0);" min="10">
+        <button class="button" onclick="processAddMoney()">💸 เติมเงิน</button>
+        <button class="button" onclick="closePopup()">❌ ยกเลิก</button>
+    </div>
+</div>
+
+
+    <!-- ป๊อปอัพหมุนอัตโนมัติ -->
+    <div class="popup" id="popup-auto-spin">
+        <div class="popup-content">
+            <h3>เลือกจำนวนรอบการหมุน</h3>
+            <button class="button" onclick="startAutoSpin(10)">🔄 หมุน 10 ครั้ง</button>
+            <button class="button" onclick="startAutoSpin(20)">🔄 หมุน 20 ครั้ง</button>
+            <button class="button" onclick="startAutoSpin(50)">🔄 หมุน 50 ครั้ง</button>
+            <button class="button" onclick="startAutoSpin(100)">🔄 หมุน 100 ครั้ง</button>
+            <button class="button" onclick="closeAutoSpinPopup()">❌ ยกเลิก</button>
+        </div>
+    </div>
+
+    <script>
+        let users = JSON.parse(localStorage.getItem("users")) || {};
+        let currentUser = null;
+        let betAmount = 10;
+        let autoSpinInterval = null;
+        let autoSpinCount = 0;
+
+        function saveUsers() {
+            localStorage.setItem("users", JSON.stringify(users));
+        }
+
+        function login() {
+            let username = document.getElementById("username").value;
+            let password = document.getElementById("password").value;
+            if (users[username] && users[username].password === password) {
+                currentUser = username;
+                document.getElementById("auth-container").style.display = "none";
+                document.getElementById("game-container").style.display = "block";
+                document.getElementById("balance").innerText = users[currentUser].balance.toFixed(2);
+            } else {
+                document.getElementById("auth-message").innerText = "ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง";
+            }
+        }
+
+        function register() {
+            let username = document.getElementById("username").value;
+            let password = document.getElementById("password").value;
+            if (!users[username]) {
+                users[username] = {
+                    password: password,
+                    balance: 100
+                };
+                saveUsers();
+                alert("สมัครสมาชิกสำเร็จ");
+            } else {
+                document.getElementById("auth-message").innerText = "ชื่อผู้ใช้นี้มีอยู่แล้ว";
+            }
+        }
+
+        function logout() {
+            currentUser = null;
+            document.getElementById("auth-container").style.display = "block";
+            document.getElementById("game-container").style.display = "none";
+        }
+
+        function addMoney() {
+            document.getElementById("popup-add-money").style.display = "flex";
+        }
+
+        function closePopup() {
+            document.getElementById("popup-add-money").style.display = "none";
+            document.getElementById("popup-auto-spin").style.display = "none";
+        }
+
+        function processAddMoney() {
+            let addMoneyAmount = parseFloat(document.getElementById("add-money-amount").value);
+            if (addMoneyAmount >= 10) {
+                users[currentUser].balance += addMoneyAmount;
+                document.getElementById("balance").innerText = users[currentUser].balance.toFixed(2);
+                saveUsers();
+                closePopup();
+            }
+        }
+
+        function increaseBet() {
+            betAmount += 10;
+            document.getElementById("betAmount").innerText = betAmount;
+        }
+
+        function decreaseBet() {
+            if (betAmount > 10) {
+                betAmount -= 10;
+                document.getElementById("betAmount").innerText = betAmount;
+            }
+        }
+
+        function showAutoSpinOptions() {
+            document.getElementById("popup-auto-spin").style.display = "flex";
+        }
+
+        function startAutoSpin(count) {
+            autoSpinCount = count;
+            autoSpinInterval = setInterval(() => {
+                if (autoSpinCount > 0) {
+                    spin();
+                    autoSpinCount--;
+                } else {
+                    stopAutoSpin();
+                }
+            }, 1000);
+            document.getElementById("stop-spin-button").style.display = "block";
+            closeAutoSpinPopup();
+        }
+
+        function stopAutoSpin() {
+            clearInterval(autoSpinInterval);
+            autoSpinInterval = null;
+            document.getElementById("stop-spin-button").style.display = "none";
+        }
+
+        function closeAutoSpinPopup() {
+            document.getElementById("popup-auto-spin").style.display = "none";
+        }
+
+       function spin() {
+    // ตรวจสอบยอดเงินก่อนหมุน
+    if (users[currentUser].balance < betAmount) {
+        alert("คุณไม่มีเงินเพียงพอในการหมุน กรุณาเติมเงิน");
+        return; // หยุดฟังก์ชันหากยอดเงินไม่พอ
+    }
+
+    let fruits = ["🍒", "🍊", "🍉", "🍇", "🍓", "🍍", "🍑"];
+
+    // การสุ่มผลลัพธ์
+    let slot1 = fruits[Math.floor(Math.random() * fruits.length)];
+    let slot2 = fruits[Math.floor(Math.random() * fruits.length)];
+    let slot3 = fruits[Math.floor(Math.random() * fruits.length)];
+
+    // เพิ่มความน่าจะเป็นในการชนะ 15% (1 ใน 7 ครั้ง)
+    if (Math.random() < 0.15) {
+        let winningFruit = fruits[Math.floor(Math.random() * fruits.length)];
+        slot1 = winningFruit;
+        slot2 = winningFruit;
+        slot3 = winningFruit;
+    }
+
+    document.getElementById("slot1").innerText = slot1;
+    document.getElementById("slot2").innerText = slot2;
+    document.getElementById("slot3").innerText = slot3;
+
+    let winnings = 0;
+
+    // คำนวณเงินรางวัลที่แตกต่างกันสำหรับแต่ละผลลัพธ์
+    if (slot1 === slot2 && slot2 === slot3) {
+        switch (slot1) {
+            case "🍒":
+                winnings = betAmount * 3.00;  // 🍒 ชนะ *3
+                break;
+            case "🍊":
+                winnings = betAmount * 2.50;  // 🍊 ชนะ *2.5
+                break;
+            case "🍉":
+                winnings = betAmount * 2.00;  // 🍉 ชนะ *2
+                break;
+            case "🍇":
+                winnings = betAmount * 2.75;  // 🍇 ชนะ *2.75
+                break;
+            case "🍓":
+                winnings = betAmount * 3.50;  // 🍓 ชนะ *3.5
+                break;
+            case "🍍":
+                winnings = betAmount * 4.00;  // 🍍 ชนะ *4
+                break;
+            case "🍑":
+                winnings = betAmount * 5.00;  // 🍑 ชนะ *5
+                break;
+            default:
+                winnings = betAmount * 2.59;  // หากไม่ตรงกับเงื่อนไขที่กำหนดให้คูณตามปกติ
+                break;
+        }
+    }
+
+    document.getElementById("winnings").innerText = winnings.toFixed(2);
+    users[currentUser].balance += winnings - betAmount;
+    document.getElementById("balance").innerText = users[currentUser].balance.toFixed(2);
+    saveUsers();
+}
+        function calculateWinnings(slot1, slot2, slot3) {
+            if (slot1 === slot2 && slot2 === slot3) {
+                return betAmount * 10; // ตัวอย่างการคำนวณเงินรางวัล
+            }
+            return 0;
+        }
+    </script>
+
+</body>
+
+</html>
